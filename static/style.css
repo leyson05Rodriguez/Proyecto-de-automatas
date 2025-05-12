@@ -1,0 +1,71 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado principal */
+h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0d6efd;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo para inputs correctos */
+input.valid {
+    border: 2px solid #198754 !important; /* verde */
+    background-color: #e9f8f0;
+}
+
+/* Estilo para inputs con error */
+input.invalid {
+    border: 2px solid #dc3545 !important; /* rojo */
+    background-color: #fcebea;
+}
+
+/* Estilo para sugerencias */
+.suggestion {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #6c757d;
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+/* Estilo para mensajes de error debajo del input */
+.error-message {
+    color: #dc3545;
+    font-size: 0.95rem;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+/* Estilo para botón */
+button {
+    margin-top: 20px;
+}
+
+/* Responsive para móvil */
+@media (max-width: 576px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+}

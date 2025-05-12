@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validador de Preguntas WH</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Validador de Preguntas WH (Pasado Continuo Negativo)</h1>
+
+        <p>
+            Escribe 5 preguntas WH usando el pasado continuo negativo.
+            <em>Ejemplo: <strong>Why wasn't she studying?</strong></em>
+        </p>
+
+        <form method="POST">
+            {% for i in range(1, 6) %}
+                <div class="mb-3">
+                    <label for="question{{ i }}" class="form-label">Pregunta {{ i }}:</label>
+                    <input type="text"
+                           class="form-control {% if errors[i-1] %}invalid{% elif questions[i-1] %}valid{% endif %}"
+                           id="question{{ i }}"
+                           name="question{{ i }}"
+                           value="{{ questions[i-1] }}">
+                    
+                    {% if errors[i-1] %}
+                        <div class="error-message">
+                            {% for error in errors[i-1] %}
+                                • {{ error }}<br>
+                            {% endfor %}
+                        </div>
+                        {% if suggestions[i-1] %}
+                            <div class="suggestion">Sugerencia: {{ suggestions[i-1] }}</div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <button type="submit" class="btn btn-primary">Validar</button>
+        </form>
+
+        {% if score is not none %}
+            <h3 class="mt-4">Calificación: {{ score }} / 5</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
+ 
