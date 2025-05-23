@@ -1,0 +1,114 @@
+/* Fuente y fondo general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0e0c0c, #0c0b0b);
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal con efecto translúcido */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Títulos y textos forzadamente blancos */
+body, h1, h2, h3, h4, h5, h6,
+p, em, strong, label, .form-label, .error-message, .suggestion {
+    color: #ffffff !important;
+}
+
+/* Mejora de visibilidad con sombra */
+h1, p, label {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo encabezado */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Inputs válidos */
+input.valid {
+    border: 2px solid #4caf50 !important;
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #ffffff;
+}
+
+/* Inputs inválidos */
+input.invalid {
+    border: 2px solid #ff4d4d !important;
+    background-color: rgba(255, 77, 77, 0.1);
+    color: #ffffff;
+}
+
+/* Inputs generales */
+input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-color: rgba(0, 0, 0, 0.986);
+    color: #ffffff;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border: 2px solid #ffffff;
+    outline: none;
+}
+
+/* Sugerencias */
+.suggestion {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #bbbbbb;
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+/* Mensajes de error */
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.95rem;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+/* Botón personalizado */
+button, .btn {
+    background-color: #6a8ef6;
+    border: none;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #567ee8;
+}
+
+/* Responsive para móvil */
+@media (max-width: 576px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+}
